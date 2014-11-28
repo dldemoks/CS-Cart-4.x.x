@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+	<id>payeer</id>
+	<name>Payeer</name>
+	<copyright>www.payeer.com</copyright>
+	<authorEmail></authorEmail>
+	<version>1.0.0</version>
+	<description>Payeer® Merchant позволяет принимать платежи всеми возможными способами по всему миру!</description>
+	<priority>1</priority>
+	<dependencies></dependencies>
+	<queries>
+		<item for="install">
+			INSERT INTO `?:payment_processors` (`processor_id`, `processor`, `processor_script`, `processor_template`, `admin_template`, `callback`, `type`) VALUES 
+			('', 'Payeer', 'payeer.php', 'views/orders/components/payments/cc_outside.tpl', 'payeer.tpl', 'N', 'P')
+		</item>
+		<item for="uninstall">
+			DELETE FROM ?:payment_processors WHERE processor = 'Payeer'
+		</item>
+	</queries>
+	
+	<default_language>ru</default_language>
+    <language_variables>
+		<item lang="ru" id="payeer_url">URL мерчанта</item>
+		<item lang="ru" id="payeer_id">ID магазина</item>
+		<item lang="ru" id="payeer_secret_key">Секретный ключ</item>
+		<item lang="ru" id="payeer_currency">Валюта магазина</item>
+		<item lang="ru" id="payeer_comment">Комментарий к оплате</item>
+		<item lang="ru" id="payeer_pathlog">Путь до файла для журнала оплат через Payeer (например, /payeer_orders.log)</item>
+		<item lang="ru" id="payeer_ipfilter">IP фильтр обработчика платежа</item>
+		<item lang="ru" id="payeer_emailerr">Email для ошибок</item>
+		<item lang="ru" id="payeer_mail_subject">Ошибка оплаты</item>
+		<item lang="ru" id="payeer_mail_msg1">Не удалось провести платёж через систему Payeer по следующим причинам</item>
+		<item lang="ru" id="payeer_mail_msg2"> - Не совпадают цифровые подписи</item>
+		<item lang="ru" id="payeer_mail_msg3"> - Cтатус платежа не является success</item>
+		<item lang="ru" id="payeer_mail_msg4"> - ip-адрес сервера не является доверенным</item>
+		<item lang="ru" id="payeer_mail_msg5">   доверенные ip: </item>
+		<item lang="ru" id="payeer_mail_msg6">   ip текущего сервера: </item>
+        <item lang="en" id="payeer_url">The URL of the merchant</item>
+		<item lang="en" id="payeer_id">ID store</item>
+		<item lang="en" id="payeer_secret_key">Secret key</item>
+		<item lang="en" id="payeer_currency">Currency</item>
+		<item lang="en" id="payeer_comment">Review payment</item>
+		<item lang="en" id="payeer_pathlog">Path to file to log payments through Payeer (for example, /payeer_orders.log)</item>
+		<item lang="en" id="payeer_ipfilter">IP filter handler payment</item>
+		<item lang="en" id="payeer_emailerr">Email error</item>
+		<item lang="en" id="payeer_mail_subject">Error payment</item>
+		<item lang="en" id="payeer_mail_msg1">failed to make the payment through the system Payeer for the following reasons</item>
+		<item lang="en" id="payeer_mail_msg2"> - do Not match the digital signature</item>
+		<item lang="en" id="payeer_mail_msg3"> - the payment Status is not success</item>
+		<item lang="en" id="payeer_mail_msg4"> is the ip address of the server is not trusted</item>
+		<item lang="en" id="payeer_mail_msg5"> trusted ip: </item>
+		<item lang="en" id="payeer_mail_msg6"> current ip of the server: </item>
+    </language_variables>
+</addon>
