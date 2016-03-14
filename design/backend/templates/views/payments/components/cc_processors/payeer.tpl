@@ -3,7 +3,7 @@
 <div class="control-group">
 	<label class="control-label" for="m_url">{__("payeer_url")}:</label>
 	<div class="controls">
-		<input type="text" name="payment_data[processor_params][m_url]" id="m_url" value="{if $processor_params.m_url == ""}//payeer.com/merchant/{/if}{$processor_params.m_url}" class="input-text" />
+		<input type="text" name="payment_data[processor_params][m_url]" id="m_url" value="{if $processor_params.m_url == ""}https://payeer.com/merchant/{/if}{$processor_params.m_url}" class="input-text" />
 	</div>
 </div>
 
@@ -30,13 +30,6 @@
             <option value="RUB" {if $processor_params.currency == "RUB"}selected="selected"{/if}>{__("currency_code_rur")}</option>
         </select>
     </div>
-</div>
-
-<div class="control-group">
-	<label class="control-label" for="m_desc">{__("payeer_comment")}:</label>
-	<div class="controls">
-		<input type="text" name="payment_data[processor_params][m_desc]" id="m_desc" value="{$processor_params.m_desc}" class="input-text" size="100" />
-	</div>
 </div>
 
 <div class="control-group">
