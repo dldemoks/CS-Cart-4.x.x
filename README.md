@@ -1,8 +1,8 @@
 CS-Cart
 ======
-Модуль оплаты Payeer
+Payment module Payeer
 
-Для установки модуля скачайте архив и прилагаемые файлы.
-Далее следуйте инструкции.
+To install the module, download and unzip the archive.
+Then follow the attached instructions.
 
-Поддержка версии CMS CS-Cart 4.x.x
+Support for CMS CS-Cart 4.x.x
